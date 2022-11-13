@@ -1,0 +1,30 @@
+export const Animals = [
+  {
+    "name":"mímir",
+    "bread":"duck"
+  },
+  {
+    "name":"thor",
+    "bread":"duck"
+  },
+  {
+    "name":"odín",
+    "bread":"bear"
+  },
+  {
+    "name":"kratos",
+    "bread":"duck"
+  },
+  {
+    "name":"atreus",
+    "bread":"bear"
+  },
+  {
+    "name":"freya",
+    "bread":"duck"
+  },
+  {
+    "name":"faye",
+    "bread":"bear"
+  }
+]
