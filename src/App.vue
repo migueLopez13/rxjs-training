@@ -15,10 +15,10 @@
 
       <v-list density="compact" nav>
         <router-link to="/example-1">
-          <v-list-item title="Example-1" />
+          <v-list-item title="Ejemplo 1" />
         </router-link>
         <router-link to="/example-2">
-          <v-list-item title="Example-2" />
+          <v-list-item title="ejemplo 2" />
         </router-link>
       </v-list>
     </v-navigation-drawer>
