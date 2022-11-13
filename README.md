@@ -1,2 +1,2 @@
-# -rxjs
+# small talk rxjs example
 rxjs-training
