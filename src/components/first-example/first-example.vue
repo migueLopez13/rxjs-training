@@ -32,9 +32,9 @@
 
 <script setup>
 // @ts-nocheck
-import { from, of, tap, delay, concatMap, share } from "rxjs";
+import { from, of, tap, delay, concatMap } from "rxjs";
 import { ref } from "vue";
-import { Animals } from "./../../repository/animals";
+import { Animals } from "./../../mock/animals";
 
 const animals$ = from(Animals).pipe(
   concatMap((item) => of(item).pipe(delay(1000)))
@@ -48,7 +48,7 @@ const handleClick = () => {
 };
 
 const setAnimalListByBread = (animal) => {
-  animal.bread === "bear"
+  animal.breed === "bear"
     ? (bearList.value = [...bearList.value, animal])
     : (duckList.value = [...duckList.value, animal]);
 };
