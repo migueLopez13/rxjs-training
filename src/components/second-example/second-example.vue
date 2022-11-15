@@ -14,7 +14,7 @@
 
     <v-card v-if="showResults" class="mt-4" :loading="loading">
       <v-card-text>
-        <template slot="progress">
+        <template v-slot:progress>
           <v-progress-linear color="blue" indeterminate striped />
         </template>
 
