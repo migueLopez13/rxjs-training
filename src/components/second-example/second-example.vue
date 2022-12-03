@@ -14,7 +14,7 @@
 
     <v-card v-if="showResults" class="mt-4" :loading="loading">
       <v-card-text>
-        <template slot="progress">
+        <template v-slot:progress>
           <v-progress-linear color="blue" indeterminate striped />
         </template>
 
@@ -70,7 +70,7 @@ const getGithubUsers = (user) => {
   return ajax.getJSON(`https://api.github.com/search/users?q=${user}`).pipe(
     map(({ items }) => items),
     mergeAll(),
-    take(3),
+    take(5),
     catchError((err) => of(err))
   );
 };

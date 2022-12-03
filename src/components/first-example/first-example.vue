@@ -1,6 +1,8 @@
 <template>
   <v-container>
-    <v-btn color="blue" class="mb-4" @click="handleClick"> Pedir datos </v-btn>
+    <v-btn color="blue" class="mb-4" @click="handleClick">
+      Recibir datos
+    </v-btn>
     <v-row>
       <v-col cols="6">
         <v-card>
@@ -32,23 +34,23 @@
 
 <script setup>
 // @ts-nocheck
-import { from, of, tap, delay, concatMap, share } from "rxjs";
+import { from, of, tap, delay, concatMap } from "rxjs";
 import { ref } from "vue";
-import { Animals } from "./../../repository/animals";
+import { Animals } from "./../../mock/animals";
 
 const animals$ = from(Animals).pipe(
-  concatMap((item) => of(item).pipe(delay(1000)))
+  concatMap((item) => of(item).pipe(delay(2000)))
 );
 
 const bearList = ref([]);
 const duckList = ref([]);
 
 const handleClick = () => {
-  animals$.pipe(tap(setAnimalListByBread)).subscribe();
+  animals$.pipe(tap(setAnimalListByBreed)).subscribe();
 };
 
-const setAnimalListByBread = (animal) => {
-  animal.bread === "bear"
+const setAnimalListByBreed = (animal) => {
+  animal.breed === "bear"
     ? (bearList.value = [...bearList.value, animal])
     : (duckList.value = [...duckList.value, animal]);
 };
